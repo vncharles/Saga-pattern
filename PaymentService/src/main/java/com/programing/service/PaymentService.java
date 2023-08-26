@@ -9,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service @RequiredArgsConstructor
 public class PaymentService {
     private final UserRepository userRepository;
@@ -19,6 +21,8 @@ public class PaymentService {
         userRepository.save(new User("Trong", 70000.0));
         userRepository.save(new User("Bao", 100000.0));
     }
+
+    public List<User> getAll() {return userRepository.findAll();}
 
     @KafkaListener(topics = "${topic.name.payment.in}", groupId = "${spring.kafka.consumer.payment-group-id}")
     public void processPayment(KafkaOrchestratorResponseDTO orchestratorResponse) {
