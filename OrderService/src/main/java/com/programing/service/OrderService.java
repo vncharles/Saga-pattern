@@ -12,12 +12,15 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class OrderService {
     private final OrderRepository orderRepository;
     private final KafkaProducer kafkaProducer;
+
+    public List<Order> getAll(){return orderRepository.findAll();}
 
     public Order create(OrderRequest request) {
         Order order = orderRepository.save(toOrder(request));

@@ -4,10 +4,9 @@ import com.programing.entity.Order;
 import com.programing.model.OrderRequest;
 import com.programing.service.OrderService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/order")
@@ -18,5 +17,10 @@ public class OrderController {
     @PostMapping
     public Order create(@RequestBody OrderRequest request) {
         return orderService.create(request);
+    }
+
+    @GetMapping
+    public List<Order> getAll() {
+        return orderService.getAll();
     }
 }
