@@ -27,7 +27,7 @@ docker-compose up --build -d
 
  
 # How to test
-## Data
+## Data (Data will reset when restart container)
 
 Payment
 ```
@@ -86,4 +86,14 @@ curl -L 'http://localhost:8181/api/order' \
 ## Send a get request get all order
 ```
 curl -L 'http://localhost:8181/api/order'
+```
+
+## Send a get request get all product check stock
+```
+curl -L 'http://localhost:8183/api/product'
+```
+
+## Send a get request get all user check payment
+```
+curl -L 'http://localhost:8184/api/user'
 ```
