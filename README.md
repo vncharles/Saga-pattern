@@ -1,12 +1,12 @@
 ﻿# How to test
-## data
+## Data
 
-payment
+Payment
 ```
 paymentId 1: 70000đ
 paymentId 2: 100000đ
 ```
-product
+Product
 ```
 productId 1:
   - price: 50000đ
@@ -19,7 +19,7 @@ productId 3:
   - stock: 2
 ```
 
-## send a post request create order
+## Send a post request create order
 ```
 curl -L 'http://localhost:8181/api/order' \
 -H 'Content-Type: application/json' \
@@ -31,7 +31,7 @@ curl -L 'http://localhost:8181/api/order' \
 }'
 ```
 
-## send a get request get all order
+## Send a get request get all order
 ```
 curl -L 'http://localhost:8181/api/order'
 ```
