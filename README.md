@@ -1,4 +1,16 @@
-﻿# How to test
+# How to build and run
+Clone project
+```
+git clone https://github.com/vncharles/Saga-pattern.git
+```
+
+Run docker-compose
+```
+docker-compose up --build -d     
+```
+
+ 
+# How to test
 ## Data
 
 Payment
@@ -19,7 +31,31 @@ productId 3:
   - stock: 2
 ```
 
-## Send a post request create order
+## Send a post request create order success
+```
+curl -L 'http://localhost:8181/api/order' \
+-H 'Content-Type: application/json' \
+-d '{
+    "productId": 1,
+    "quantity": 1,
+    "paymentId": 1
+
+}'
+```
+
+## Send a post request create order. Product is cancelled
+```
+curl -L 'http://localhost:8181/api/order' \
+-H 'Content-Type: application/json' \
+-d '{
+    "productId": 4,
+    "quantity": 1,
+    "paymentId": 1
+
+}'
+```
+
+## Send a post request create order. Payment is cancelled
 ```
 curl -L 'http://localhost:8181/api/order' \
 -H 'Content-Type: application/json' \
