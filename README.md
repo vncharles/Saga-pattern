@@ -1,5 +1,4 @@
 # Hi there 👋
-## This is a hypothetical organization functioning as a company. This organization is established solely to simulate the workings of the Saga pattern in the "place order" use case. 
 
 ### The overview image of the Orchestration implementation:
 ![orchestrator-pattern](https://github.com/saga-pattern-demo/.github/assets/52238180/c4c1925b-8b82-41a1-b59d-08e1de293ca5)
